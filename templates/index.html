@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time GPS Viewer with CesiumJS</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.93/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.93/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<!-- <label for="flattenCheckbox">
+    <input type="checkbox" id="flattenCheckbox"> Flatten Terrain
+</label> -->
+<body>
+    <div id="cesiumContainer"></div>
+    <div id="legend">
+        <div class="legend-item">
+            <span class="color-box" style="background: red;"></span> No Fix (Red)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background: blue;"></span> Float Mode (Blue)
+        </div>
+        <div class="legend-item">
+            <span class="color-box" style="background: green;"></span> RTK Fixed (Green)
+        </div>
+    </div>
+        <!-- Dropdown for CSV file selection -->
+    <div id="controls">
+        <label for="csvSelector">Select CSV File:</label>
+        <select id="csvSelector">
+            <!-- Options populated by JavaScript -->
+        </select>
+        <label for="flattenCheckbox">
+            <input type="checkbox" id="flattenCheckbox"> Flatten Points
+        </label>
+    </div>
+    <script src="static/app.js"></script>
+</body>
+</html>
